@@ -1,36 +1,65 @@
-{"APP_ID":"wxff86c6b272457047",
- "APP_SECRET":"26b2c70233a410f52056cfd868b1cc38",
-   "IS_SHOW_COLOR":true,
-     "CALLBACK_TEMPLATE_ID":"w5U_YCnL7-iI4t-LPIWqZ5888ePB-B8ktB_daTTvGXI",
-       "CALLBACK_USERS":[
-         {"name":"自己",
-          "id":"oI3sI6EHFrBwouyDa_WF2tL4jjww"}
-       ],
-         "USERS":[
-           {"name":"宝贝",
-            "id":"oI3sI6A7sZMSonrjjzzXenROcUnA",
-            "useTemplateId":"oQ0s528AiIur9e19CSUCfeuXn6P0YnklmKfnjIsHCdU",
-            "province":"青海省",
-            "city":"西宁市",
-            "horoscopeDate":"06-25",
-            "horoscopeDateType":"今日",
-            "openUrl":"https://XXXXXgod.github.io/",
-            "festivals":[
-              {"type":"*生日",
-               "name":"宝贝的生日",
-               "date":"06-25",
-               "year":"1991"},
-              {"type":"*生日",
-               "name":"大宝的生日",
-               "date":"06-13",
-               "year":"2001"}],
-            "SWITCH":{"weather":true,
-                      "holidaytts":true,
-                      "CIBA":false,
-                      "oneTalk":false,
-                      "earthyLoveWords":true,
-                      "momentCopyrighting":false,
-                      "poisonChickenSoup":false,
-                      "poetry":false,
-                      "horoscope":false,
-                      "birthdayMessage":true}}
+/* eslint-disable */
+
+/**
+ * 此项目配置为方便新人使用，已缩减至最简配置。
+ * 如若想使用更多功能，请查考文档中的 【3. config参数说明】 
+ * 自行添加属性，以支持更多个性化功能
+ */
+const USER_CONFIG = {
+
+  // 使用微信测试号：公众号APP_ID
+  APP_ID: 'wxff86c6b272457047',
+
+  // 使用微信测试号：公众号APP_SECRET
+  APP_SECRET: '26b2c70233a410f52056cfd868b1cc38',
+
+  PROVINCE: '青海',
+  CITY: '西宁',
+
+  USERS: [
+    {
+      // 想要发送的人的名字
+      name: '🧸ྀི砂糖橘🍊',
+      // 使用微信测试号：扫码关注你的微信测试号后生成的一段字符串，在测试号后台能看到
+      id: 'oI3sI6A7sZMSonrjjzzXenROcUnA',
+      // 使用微信测试号：你想对他发送的模板消息的模板ID
+      useTemplateId: 'oQ0s528AiIur9e19CSUCfeuXn6P0YnklmKfnjIsHCdU',
+      // 新历生日, 仅用作获取星座运势, 格式必须为MM-DD
+      horoscopeDate: '06-25',
+      festivals: [
+        // 注意：此条配置日期为阴历日期，因为`type`中 “生日” 之前有 * 符号
+        {
+          type: '*生日', name: '宝贝', year: '1991', date: '06-25',
+        },
+        // 注意：此条配置日期为阳历日期，因为`type`中 “生日” 之前没有 * 符号
+        {
+          type: '*生日', name: '大宝', year: '2001', date: '06-13',
+        },
+        {
+          type: '节日', name: '相识纪念日', year: '2022', date: '07-19',
+        },
+      ],
+      // 我们在一起已经有xxxx天了的配置
+      customizedDateList: [
+        // 在一起的日子
+        { keyword: 'love_day', date: '2022-07-19' },
+        
+      ],
+    },
+  ],
+
+
+  // 【推送完成提醒】模板id, 用来看自己有没有发送成功的那个模板
+  CALLBACK_TEMPLATE_ID: 'w5U_YCnL7-iI4t-LPIWqZ5888ePB-B8ktB_daTTvGXI',
+
+  CALLBACK_USERS: [
+    {
+      name: '自己',
+      // 使用微信测试号：自己的微信id，扫码关注你的微信测试号后生成的一段字符串，在测试号后台能看到
+      id: 'oI3sI6EHFrBwouyDa_WF2tL4jjww',
+    }
+  ],
+
+}
+
+module.exports = USER_CONFIG
